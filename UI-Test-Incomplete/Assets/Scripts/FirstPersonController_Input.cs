@@ -8,6 +8,8 @@ public class FirstPersonController_Input : MonoBehaviour
 {
     private InputActions inputActions;
 
+    //public InventoryManager inventoryManager;
+
     private Vector2 moveInput;
     private Vector2 mouseInput;
 
@@ -40,9 +42,14 @@ void Update()
     private void FixedUpdate()
     {
         controller.Move(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")), Time.fixedDeltaTime);
+        //controller.Move(moveInput, Time.fixedDeltaTime);
     }
     private void LateUpdate()
     {
         controller.Look(new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y")));
+        //controller.Look(mouseInput);
     }
+
+
+
 }
